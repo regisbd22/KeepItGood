@@ -11,10 +11,11 @@ import { AccountingComponent } from './accounting/accounting.component';
 const roads = [
   { path : 'auth/signin', component: SignInComponent },
   { path : 'auth/signup',  component: SignUpComponent },
-  { path : '',  component: HomeComponent },
+  { path : 'home',  component: HomeComponent },
   { path : 'gestion/mainPage',  component: MainGestionComponent },
   { path : 'accounting',  component: AccountingComponent },
-]
+  { path: '', redirectTo: 'home', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
