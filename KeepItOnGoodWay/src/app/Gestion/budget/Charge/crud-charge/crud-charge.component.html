@@ -1,0 +1,29 @@
+<mat-card-header>
+    <mat-toolbar class="mat-toolbar" style="display: flex; justify-content: space-between">
+        <mat-card-title>Charge Information</mat-card-title>
+        <span class="toolbar-spacer"></span>
+        <!-- <mat-icon (click)="onNoClick()">Cancel</mat-icon> -->
+        <button class="btn-danger" (click)="onNoClick()">Cancel</button>
+    </mat-toolbar>
+</mat-card-header>
+<mat-card-content>
+    <div class="container" style="display: flex; justify-content: space-between; padding: 10px">
+        <form [formGroup]="chargeForm" (ngSubmit)="onSubmitForm()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>name :</label>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Montant :</label>
+                        <input type="text" class="form-control" formControlName="amountCharge">
+                    </div>
+                    <div class="row" style="display: flex; justify-content: center; margin: 5px">
+                        <button type="submit" class="btn-success" [disabled]="chargeForm.valid">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-card-content>
