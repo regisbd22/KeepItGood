@@ -18,9 +18,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let charge of charges">
+          <tr *ngFor="let charge of chargeList">
+            <td>{{charge.accountingAccount}}</td>
             <td>{{charge.name}}</td>
-            <td>{{charge.type}}</td>
             <td>{{charge.amount}}</td>
             <td><mat-icon (click)="editChargeAccount(charge)">edit</mat-icon></td>
             <td><mat-icon (click)="removeChargeAccount(charge.id)">delete</mat-icon></td>

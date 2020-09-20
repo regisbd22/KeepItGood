@@ -16,7 +16,7 @@ export class MainChargeComponent implements OnInit, OnDestroy {
   chargeList: Charge[];
   chargeSubscription: Subscription;
 
-  constructor(private chargeService: ChargeServiceService, private dialog?: MatDialog) { }
+  constructor(private chargeService?: ChargeServiceService, private dialog?: MatDialog) { }
 
   ngOnInit() {
     this.chargeSubscription = this.chargeService.chargeSubject.subscribe(
@@ -41,18 +41,18 @@ export class MainChargeComponent implements OnInit, OnDestroy {
     });
   }
 
-  editContact(id: number) {
+  editChargeAccount(id: number) {
     this.isPopUpOpened = true;
-    const contact = this.chargeService.getAllCharge().findIndex(c => c.id === id);
+    const charge = this.chargeService.getAllCharge().findIndex(c => c.id === id);
     const dialogRef = this.dialog.open(CrudChargeComponent, {
-      data: contact
+      data: charge
     });
     dialogRef.afterClosed().subscribe(result => {
       this.isPopUpOpened = false;
     });
   }
 
-  removeContact(id: number) {
+  removeChargeAccount(id: number) {
     this.chargeService.removeCharge(id);
   }
 
