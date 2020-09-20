@@ -38,7 +38,7 @@ export class CrudChargeComponent implements OnInit {
       this.chargeService.addCharge(charge);
       this.matDialogRef.close();
     } else {
-      this.chargeService.editCharge(this.chargeForm.value);
+      this.chargeService.editCharge(this.chargeForm.value, this.data.id);
       this.matDialogRef.close();
     }
   }

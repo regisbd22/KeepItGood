@@ -22,9 +22,10 @@ export class ChargeServiceService {
     this.emitChargeSubject();
   }
 
-  editCharge(charge: Charge) {
-    const index = this.chargeList.findIndex(c => c.id === charge.id);
-    this.chargeList[index] = charge;
+  editCharge(chargeValueForm: Charge, id: number) {
+    const index = this.chargeList.findIndex(c => c.id === id);
+    this.chargeList[index] = chargeValueForm;
+    this.chargeList[index].date = new Date();
     this.emitChargeSubject();
   }
 
