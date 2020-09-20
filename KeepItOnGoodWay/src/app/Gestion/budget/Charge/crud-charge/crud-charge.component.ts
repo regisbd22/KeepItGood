@@ -20,7 +20,7 @@ export class CrudChargeComponent implements OnInit {
   ngOnInit() {
     this.chargeForm = this.formBuilder.group({
       name: [this.data.name, Validators.required],
-      amountCharge: [this.data.amountCharge, Validators.required]
+      amount: [this.data.amount, Validators.required]
     });
   }
 
@@ -33,7 +33,7 @@ export class CrudChargeComponent implements OnInit {
       const formValue = this.chargeForm.value;
       const charge = new Charge();
       charge.name = formValue.name;
-      charge.amount = formValue.amountCharge;
+      charge.amount = formValue.amount;
       charge.date = new Date();
       this.chargeService.addCharge(charge);
       this.matDialogRef.close();
