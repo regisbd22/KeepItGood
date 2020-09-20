@@ -2,26 +2,34 @@
     <mat-toolbar class="mat-toolbar" style="display: flex; justify-content: space-between">
         <mat-card-title>Charge Information</mat-card-title>
         <span class="toolbar-spacer"></span>
-        <!-- <mat-icon (click)="onNoClick()">Cancel</mat-icon> -->
-        <button class="btn-danger" (click)="onNoClick()">Cancel</button>
+        <mat-icon (click)="onNoClick()">cancel</mat-icon>
     </mat-toolbar>
 </mat-card-header>
 <mat-card-content>
-    <div class="container" style="display: flex; justify-content: space-between; padding: 10px">
+    <div class="containerCharge">
         <form [formGroup]="chargeForm" (ngSubmit)="onSubmitForm()">
             <div class="form-group">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Name :</label>
-                        <input type="text" class="form-control" formControlName="name">
+                <div class="row spacing">
+                    <div class="col-md-6 label">
+                        <label for="nameCharge">Name :</label>
                     </div>
                     <div class="col-md-6">
-                        <label>Amount :</label>
-                        <input type="text" class="form-control" formControlName="amountCharge">
+                        <input id="nameCharge" type="text" class="form-control" formControlName="name">
                     </div>
-                    <div class="row" style="display: flex; justify-content: center; margin: 5px">
-                        <button type="submit" class="btn-success">Save</button> <!-- [disabled]="chargeForm.valid" -->
+                </div>
+                <div class="row spacing">
+                    <div class="col-md-6 label">
+                        <label for="amount">Amount :</label>
                     </div>
+                    <div class="col-md-6">
+                        <input id="amount" type="text" class="form-control" formControlName="amountCharge">
+                    </div>
+                </div>
+                <div class="row btnsave">
+                    <div>
+                        <button type="submit" class="btn-success">Save</button>
+                    </div>
+                    <!-- [disabled]="chargeForm.valid" -->
                 </div>
             </div>
         </form>
