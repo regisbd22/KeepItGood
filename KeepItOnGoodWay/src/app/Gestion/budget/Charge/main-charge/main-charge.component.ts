@@ -43,7 +43,7 @@ export class MainChargeComponent implements OnInit, OnDestroy {
 
   editChargeAccount(id: number) {
     this.isPopUpOpened = true;
-    const charge = this.chargeService.getAllCharge().findIndex(c => c.id === id);
+    const charge = this.chargeService.getAllCharge().find(c => c.id === id);
     const dialogRef = this.dialog.open(CrudChargeComponent, {
       data: charge
     });

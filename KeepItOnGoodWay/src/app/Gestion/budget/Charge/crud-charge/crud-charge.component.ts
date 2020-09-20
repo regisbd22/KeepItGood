@@ -34,6 +34,7 @@ export class CrudChargeComponent implements OnInit {
       const charge = new Charge();
       charge.name = formValue.name;
       charge.amount = formValue.amountCharge;
+      charge.date = new Date();
       this.chargeService.addCharge(charge);
       this.matDialogRef.close();
     } else {
