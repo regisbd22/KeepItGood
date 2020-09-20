@@ -34,6 +34,8 @@ const roads = [
   { path : 'auth/signup',  component: SignUpComponent },
   { path : 'home',  component: HomeComponent },
   { path : 'gestion',  component: MainGestionComponent },
+  { path : 'gestion/charges',  component: MainChargeComponent },
+  { path : 'gestion/produits',  component: BudgetComponent }, // TODO RBO
   { path : 'gestion/budget',  component: BudgetComponent },
   { path : 'accounting',  component: AccountingComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'}
