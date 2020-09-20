@@ -26,8 +26,8 @@ import { ChargeServiceService } from './service/charge-service.service';
 import { MainChargeComponent } from './Gestion/budget/Charge/main-charge/main-charge.component';
 import { MainProduitComponent } from './Gestion/budget/Produit/main-produit/main-produit.component';
 import { CrudProductComponent } from './Gestion/budget/Produit/crud-product/crud-product.component';
-import { CrudChargeComponent } from './Gestion/budget/Charge/crud-charge/crud-charge.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CrudChargeComponent } from './Gestion/budget/Charge/crud-charge/crud-charge.component';
 
 const roads = [
   { path : 'auth/signin', component: SignInComponent },
@@ -69,6 +69,7 @@ const roads = [
   providers: [
     ChargeServiceService
   ],
+  entryComponents: [CrudChargeComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
