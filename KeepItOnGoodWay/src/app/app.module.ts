@@ -28,6 +28,7 @@ import { MainProduitComponent } from './Gestion/budget/Produit/main-produit/main
 import { CrudProductComponent } from './Gestion/budget/Produit/crud-product/crud-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrudChargeComponent } from './Gestion/budget/Charge/crud-charge/crud-charge.component';
+import { ParametersComponent } from './accounting/parameters/parameters.component';
 
 const roads = [
   { path : 'auth/signin', component: SignInComponent },
@@ -38,6 +39,7 @@ const roads = [
   { path : 'gestion/produits',  component: BudgetComponent }, // TODO RBO
   { path : 'gestion/budget',  component: BudgetComponent },
   { path : 'accounting',  component: AccountingComponent },
+  { path : 'accounting/parameters',  component: ParametersComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
@@ -54,7 +56,8 @@ const roads = [
     MainChargeComponent,
     MainProduitComponent,
     CrudProductComponent,
-    CrudChargeComponent
+    CrudChargeComponent,
+    ParametersComponent
   ],
   imports: [
     BrowserModule,
