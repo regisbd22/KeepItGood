@@ -1,1 +1,33 @@
-<p>parameters works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-toolbar class="mat-toolbar" style="display: flex; justify-content: space-between">
+            <mat-card-title>Parameters</mat-card-title>
+            <span class="toolbar-spacer"></span>
+            <!--<mat-icon (click)="addCharge()"></mat-icon>-->
+            <button class="btn btn-success" (click)="addAccount()">Add account</button>
+        </mat-toolbar>
+    </mat-card-header>
+  </mat-card>
+  <mat-card-content>
+      <!-- Ajouter un titre de tableau -->
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>account type</th>
+            <th>Account number</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+            <div *ngIf="chargeAccounts.length > 0">
+                <tr *ngFor="let charge of chargeAccounts">
+                    <td>{{charge.type}}</td>
+                    <td>{{charge.number}}</td>
+                    <td>{{charge.name}}</td>
+                    <td><mat-icon (click)="editChargeAccount(charge.id)">edit</mat-icon></td>
+                    <td><mat-icon (click)="removeChargeAccount(charge.id)">delete</mat-icon></td>
+                  </tr>
+            </div>
+        </tbody>
+      </table>
+  </mat-card-content>

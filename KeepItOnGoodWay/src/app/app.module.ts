@@ -29,6 +29,7 @@ import { CrudProductComponent } from './Gestion/budget/Produit/crud-product/crud
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrudChargeComponent } from './Gestion/budget/Charge/crud-charge/crud-charge.component';
 import { ParametersComponent } from './accounting/parameters/parameters.component';
+import { CrudParametersComponent } from './accounting/parameters/crud-parameters/crud-parameters.component';
 
 const roads = [
   { path : 'auth/signin', component: SignInComponent },
@@ -57,7 +58,8 @@ const roads = [
     MainProduitComponent,
     CrudProductComponent,
     CrudChargeComponent,
-    ParametersComponent
+    ParametersComponent,
+    CrudParametersComponent
   ],
   imports: [
     BrowserModule,
