@@ -21,7 +21,7 @@
         <tbody>
             <div *ngIf="chargeAccounts.length > 0">
                 <tr *ngFor="let charge of chargeAccounts">
-                    <td>{{charge.type}}</td>
+                    <td>{{getTypeAccount(charge.numberAccount)}}</td>
                     <td>{{charge.numberAccount}}</td>
                     <td>{{charge.name}}</td>
                     <td><mat-icon (click)="editAccount(charge.id)">edit</mat-icon></td>

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { Subscription } from 'rxjs';
 import { CrudParametersComponent } from './crud-parameters/crud-parameters.component';
 import { ParametersService } from 'src/app/service/parameters.service';
+import { AccountingAccount } from 'src/app/model/AccountingAccount';
 
 @Component({
   selector: 'app-parameters',
@@ -12,12 +13,19 @@ import { ParametersService } from 'src/app/service/parameters.service';
 export class ParametersComponent implements OnInit {
 
   isPopUpOpened = false;
-  chargeAccounts: any[];
+  accounts: AccountingAccount[];
+  chargeAccounts: AccountingAccount[];
   parametersSubscription: Subscription;
   
   constructor(private parametersService?: ParametersService, private dialog?: MatDialog) { } 
 
   ngOnInit() {
+    this.parametersSubscription = this.parametersService.accountsSubject.subscribe(
+      (accounts: any[]) => {
+        this.accounts = accounts;
+      }
+    );
+    this.parametersService.emitAccountsSubject();
     this.manageChargeAccountSubscription();
   }
 
@@ -37,26 +45,25 @@ export class ParametersComponent implements OnInit {
 
   editAccount(id: number) {
     this.isPopUpOpened = true;
-    // const chargeAccount = this.parameterService.getAllChargeAccounts().find(c => c.id === id);
-    // const dialogRef = this.dialog.open(CrudParametersComponent, {
-    //   data: chargeAccount
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   this.isPopUpOpened = false;
-    // });
+    const account = this.parametersService.getAllAccounts().find(c => c.id === id);
+    const dialogRef = this.dialog.open(CrudParametersComponent, {
+      data: account
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.isPopUpOpened = false;
+    });
   }
 
   removeAccount(id: number) {
-    //this.parameterService.removeCharge(id);
+    this.parametersService.removeAccount(id);
+  }
+
+  getTypeAccount(numberAccount: number): string {
+    return numberAccount.toString().substring(1);
   }
 
   // ****** Private methods ***** //
   private manageChargeAccountSubscription(): void {
-    // this.parametersSubscription = this.parametersService.chargeAccountsSubject.subscribe(
-    //   (charges: any[]) => {
-    //     this.chargeAccounts = charges;
-    //   }
-    // );
-    // this.parametersService.emitChargeAccountsSubject();
+    //todo
   }
 }
