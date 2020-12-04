@@ -18,12 +18,7 @@ export class ParametersComponent implements OnInit {
   constructor(private parametersService?: ParametersService, private dialog?: MatDialog) { } 
 
   ngOnInit() {
-    // this.parametersSubscription = this.parametersService.chargeAccountsSubject.subscribe(
-    //   (charges: any[]) => {
-    //     this.chargeAccounts = charges;
-    //   }
-    // );
-    // this.parametersService.emitChargeAccountsSubject();
+    this.manageChargeAccountSubscription();
   }
 
   ngOnDestroy() {
@@ -40,8 +35,7 @@ export class ParametersComponent implements OnInit {
     });
   }
 
-
-  editChargeAccount(id: number) {
+  editAccount(id: number) {
     this.isPopUpOpened = true;
     // const chargeAccount = this.parameterService.getAllChargeAccounts().find(c => c.id === id);
     // const dialogRef = this.dialog.open(CrudParametersComponent, {
@@ -52,7 +46,17 @@ export class ParametersComponent implements OnInit {
     // });
   }
 
-  removeChargeAccount(id: number) {
+  removeAccount(id: number) {
     //this.parameterService.removeCharge(id);
+  }
+
+  // ****** Private methods ***** //
+  private manageChargeAccountSubscription(): void {
+    // this.parametersSubscription = this.parametersService.chargeAccountsSubject.subscribe(
+    //   (charges: any[]) => {
+    //     this.chargeAccounts = charges;
+    //   }
+    // );
+    // this.parametersService.emitChargeAccountsSubject();
   }
 }
