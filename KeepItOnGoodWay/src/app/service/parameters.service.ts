@@ -22,7 +22,7 @@ export class ParametersService {
     this.emitAccountsSubject();
   }
 
-  editCharge(accountValueForm: AccountingAccount, id: number) {
+  editAccount(accountValueForm: AccountingAccount, id: number) {
     const index = this.accountsList.findIndex(c => c.id === id);
     this.accountsList[index] = accountValueForm;
     this.emitAccountsSubject();

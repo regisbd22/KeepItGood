@@ -26,7 +26,7 @@ export class ParametersComponent implements OnInit {
       }
     );
     this.parametersService.emitAccountsSubject();
-    this.manageChargeAccountSubscription();
+    // this.manageChargeAccountSubscription();
   }
 
   ngOnDestroy() {
@@ -65,5 +65,10 @@ export class ParametersComponent implements OnInit {
   // ****** Private methods ***** //
   private manageChargeAccountSubscription(): void {
     //todo
+    for (const account of this.accounts) {
+      if (account.numberAccount.toString().substring(1)){
+        this.chargeAccounts.push(account);
+      }
+    }
   }
 }
