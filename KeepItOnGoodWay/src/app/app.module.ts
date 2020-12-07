@@ -30,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CrudChargeComponent } from './Gestion/budget/Charge/crud-charge/crud-charge.component';
 import { ParametersComponent } from './accounting/parameters/parameters.component';
 import { CrudParametersComponent } from './accounting/parameters/crud-parameters/crud-parameters.component';
+import { ParametersService } from './service/parameters.service';
 
 const roads = [
   { path : 'auth/signin', component: SignInComponent },
@@ -74,9 +75,10 @@ const roads = [
     MatSidenavModule
   ],
   providers: [
-    ChargeServiceService
+    ChargeServiceService,
+    ParametersService
   ],
-  entryComponents: [CrudChargeComponent],
+  entryComponents: [CrudChargeComponent, CrudParametersComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -14,7 +14,7 @@ export class ParametersComponent implements OnInit {
 
   isPopUpOpened = false;
   accounts: AccountingAccount[];
-  chargeAccounts: AccountingAccount[];
+  chargeAccounts: AccountingAccount[] = [];
   parametersSubscription: Subscription;
   
   constructor(private parametersService?: ParametersService, private dialog?: MatDialog) { } 

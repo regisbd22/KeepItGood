@@ -21,7 +21,7 @@ export class CrudParametersComponent implements OnInit {
   ngOnInit() {
     this.accountForm = this.formBuilder.group({
       name: [this.data.name, Validators.required],
-      amount: [this.data.amount, Validators.required]
+      numberAccount: [this.data.numberAccount, Validators.required]
     });
   }
 
