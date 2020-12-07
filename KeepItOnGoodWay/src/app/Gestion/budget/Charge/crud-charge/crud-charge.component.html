@@ -1,0 +1,37 @@
+<mat-card-header>
+    <mat-toolbar class="mat-toolbar" style="display: flex; justify-content: space-between">
+        <mat-card-title>Charge Information</mat-card-title>
+        <span class="toolbar-spacer"></span>
+        <mat-icon (click)="onNoClick()">cancel</mat-icon>
+    </mat-toolbar>
+</mat-card-header>
+<mat-card-content>
+    <div class="containerCharge">
+        <form [formGroup]="chargeForm" (ngSubmit)="onSubmitForm()">
+            <div class="form-group">
+                <div class="row spacing">
+                    <div class="col-md-6 label">
+                        <label for="nameCharge">Name :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="nameCharge" type="text" class="form-control" formControlName="name">
+                    </div>
+                </div>
+                <div class="row spacing">
+                    <div class="col-md-6 label">
+                        <label for="amount">Amount :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="amount" type="text" class="form-control" formControlName="amount">
+                    </div>
+                </div>
+                <!-- TODO RBO : add part select account -->
+                <div class="row btnsave">
+                    <div>
+                        <button class="btn btn-success" [disabled]="!chargeForm.valid">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-card-content>

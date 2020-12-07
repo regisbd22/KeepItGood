@@ -1,0 +1,37 @@
+<mat-card-header>
+    <mat-toolbar class="mat-toolbar" style="display: flex; justify-content: space-between">
+        <mat-card-title>Account Information</mat-card-title>
+        <span class="toolbar-spacer"></span>
+        <mat-icon (click)="onBack()">cancel</mat-icon>
+    </mat-toolbar>
+</mat-card-header>
+<mat-card-content>
+    <div class="containerCharge">
+        <form [formGroup]="accountForm" (ngSubmit)="onSubmitForm()">
+            <div class="form-group">
+                <div class="row spacing">
+                    <div class="col-md-6 label">
+                        <label for="nameAccount">Wording of the account :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="nameAccount" type="text" class="form-control" formControlName="name">
+                    </div>
+                </div>
+                <div class="row spacing">
+                    <div class="col-md-6 label">
+                        <label for="numberAccount">Account number :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="numberAccount" type="text" class="form-control" formControlName="numberAccount">
+                    </div>
+                </div>
+                <!-- TODO RBO : add part select account -->
+                <div class="row btnsave">
+                    <div>
+                        <button class="btn btn-success" [disabled]="!accountForm.valid">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-card-content>

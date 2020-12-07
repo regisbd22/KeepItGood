@@ -1,0 +1,24 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.mat-toolbar {
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+.containerCharge {
+  padding: 10px;
+}
+
+.label {
+  padding-left: 50px;
+}
+.spacing {
+  margin: 5px;
+}
+
+.btnsave {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}

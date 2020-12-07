@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-header>
+        <mat-toolbar class="mat-toolbar" style="display: flex; justify-content: space-between">
+            <mat-card-title>Charges</mat-card-title>
+            <span class="toolbar-spacer"></span>
+            <!--<mat-icon (click)="addCharge()"></mat-icon>-->
+            <button class="btn btn-success" (click)="addCharge()">Add charge</button>
+        </mat-toolbar>
+    </mat-card-header>
+  </mat-card>
+  <mat-card-content>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Account</th>
+            <th>Name</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let charge of chargeList">
+            <td>{{charge.date | date:'yyyy-MM-dd'}}</td>
+            <td>{{charge.accountingAccount}}</td>
+            <td>{{charge.name}}</td>
+            <td>{{charge.amount}}</td>
+            <td><mat-icon (click)="editChargeAccount(charge.id)">edit</mat-icon></td>
+            <td><mat-icon (click)="removeChargeAccount(charge.id)">delete</mat-icon></td>
+          </tr>
+        </tbody>
+      </table>
+  </mat-card-content>
